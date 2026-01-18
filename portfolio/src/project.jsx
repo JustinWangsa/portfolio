@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
 import PixelSnow from './PixelSnow.jsx';
 
-const projects = [
+const projects = [ 
+  // Add latest projects here
+  
   {  
-    // Add latest projects here
-
-    
+    year: 2025,
+    name: "Current Website Portfolio",
+    builtWith: ["Html", "TailwindCSS", "JavaScript", "React", "Vite"],
+    link: "https://github.com/JustinWangsa/portfolio",
+    displayText: "GitHub ↗",
+  },
+  {  
     year: 2025,
     name: "POS system",
     builtWith: ["Html", "TailwindCSS", "JavaScript", "Electron.js", "Node.js","MySQL"],
@@ -64,7 +70,7 @@ export default function Project() {
       </div>
 
       {/* Header */}
-      <div className="w-full max-w-[1200px] mx-auto mt-20 mb-8 flex items-center">
+      <div className="dotgothic-font w-full max-w-[1200px] mx-auto mt-20 mb-8 flex items-center">
         {/* Left button */}
         <Link
           to="/"

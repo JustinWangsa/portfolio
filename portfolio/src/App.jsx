@@ -80,6 +80,7 @@ function App() {
               { name: 'GitHub', link: 'https://github.com/JustinWangsa', img: '/github.png' },
               { name: 'LinkedIn', link: 'https://www.linkedin.com/in/justinwangsa/', img: '/linkedin.png' },
               { name: 'Instagram', link: 'https://www.instagram.com/justinnwangsa/', img: '/ig.png' },
+              { name: 'Email', link: 'mailto:justinwangsa9@gmail.com', img: '/email.png' },
             ].map((item, i) => (
               <li key={i} className="cursor-pointer">
                 <a
@@ -118,6 +119,8 @@ function App() {
             </span>
           ))}
         </p>
+
+        
 
         <h1 className="dotgothic-font text-[20px] md:text-[30px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] font-bold leading-none mb-2">
           {words.map((word, i) => (
@@ -227,35 +230,57 @@ function App() {
           <div className="mb-6">
             <h2 className="dotgothic-font text-white text-[16px] md:text-[20px] mb-3">Experience</h2>
             <p className="dotgothic-font text-gray-300 text-[10px] md:text-[20px] text-center">
-              Looking for a chance for an internship to gain hands on experience in networks and cybersecurity :)
+              Looking for a chance for an internship to gain hands on experience :)
             </p>
           </div>
         </div>
 
         {/* FLOATING PORTFOLIO BUTTON */}
         {showPortfolioButton && (
-          <button
+          <div
             onClick={() => setShowPortfolioPopup(true)}
-            className="fixed bottom-8 right-8 z-50 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-black/80 border-2 border-white flex items-center justify-center hover:scale-110 transition-transform animate-spin-slow"
+            className="fixed bottom-8 right-8 z-50 w-20 h-20 sm:w-40 sm:h-40 overflow-hidden cursor-pointer hover:scale-110 transition-transform"
           >
-            <img src="/old-portfolio-icon.png" alt="Old Portfolio" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
-          </button>
+            <model-viewer
+              src="/snow_globe.glb"
+              alt="Snow Globe"
+              camera-controls
+              auto-rotate
+              auto-rotate-delay="0"
+              auto-rotate-speed="2" 
+              interaction-prompt="none"
+              disable-zoom
+              shadow-intensity="0"
+              style={{
+                width: '100%',
+                height: '100%',
+              }}
+            />
+          </div>
         )}
 
         {/* PORTFOLIO POPUP */}
         {showPortfolioPopup && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
-            <div className="bg-black/90 border-2 border-white rounded-md p-4 max-w-sm w-full relative">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/1 backdrop-blur-sm">
+            <div className="border-2 border-white rounded-md p-6 max-w-lg w-full relative shadow-2xl">
               <button
                 onClick={() => setShowPortfolioPopup(false)}
-                className="absolute top-2 right-2 text-white text-xl font-bold hover:text-gray-400"
+                className="absolute top-3 right-3 text-white text-2xl font-bold hover:text-gray-400"
               >
                 ×
               </button>
-              <h2 className="dotgothic-font text-white text-[16px] md:text-[20px] mb-4 text-center">Old Portfolio</h2>
-              <a href="https://justinwangsa.github.io" target="_blank" rel="noopener noreferrer">
-                <img src="/old-port.png" alt="Old Portfolio" className="w-full h-auto object-cover rounded-md hover:scale-105 transition-transform" />
-              </a>
+              <h2 className="dotgothic-font text-white text-[18px] md:text-[24px] mb-4 text-center">Old Portfolio</h2>
+              
+              {/* Image container with background */}
+              <div className="w-full h-auto bg-white/50 p-4 rounded-md">
+                <a href="https://justinwangsa.github.io" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="/old-port.png"
+                    alt="Old Portfolio"
+                    className="w-full h-auto object-cover rounded-md hover:scale-105 transition-transform"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         )}
@@ -273,5 +298,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
