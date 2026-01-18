@@ -114,3 +114,98 @@ body {
   animation: dungeonDrop 0.9s steps(6, end);
 }
 
+@keyframes pixelPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02) translateY(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pixel-pop {
+  animation: pixelPop 2s ease-out both;
+  will-change: transform, opacity;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+body {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+
+.scroll-indicator {
+  position: fixed;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.scroll-indicator span {
+  font-size: 16px; 
+  color: #9ca3af;
+  opacity: 0;
+  animation: scrollDown 2s infinite;
+}
+
+.scroll-indicator.hide {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    right: 6px; 
+    top: 50%;   
+  }
+
+  .scroll-indicator span {
+    font-size: 12px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-indicator {
+    right: 4px;
+    top: 50%;
+  }
+
+  .scroll-indicator span {
+    font-size: 10px; 
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  25% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
