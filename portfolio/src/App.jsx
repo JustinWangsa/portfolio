@@ -8,7 +8,7 @@ function App() {
   const [hideNavbar, setHideNavbar] = useState(false);
   const [showPortfolioButton, setShowPortfolioButton] = useState(false);
   const [showPortfolioPopup, setShowPortfolioPopup] = useState(false);
-
+  const [showExperience, setShowExperience] = useState(false);
   const words = [
     { text: 'Code', color: 'text-white' },
     { text: 'Create', color: 'text-gray-400' },
@@ -37,6 +37,24 @@ function App() {
     );
 
     observer.observe(projectsSection);
+    return () => observer.disconnect();
+  }, []);
+
+  // Show experience on view 
+  useEffect(() => {
+    const experienceSection = document.getElementById('experience');
+    if (!experienceSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setShowExperience(true);
+        observer.disconnect();
+      },
+      { threshold: 0.3 }
+    );
+    
+    observer.observe(experienceSection);
     return () => observer.disconnect();
   }, []);
 
@@ -74,8 +92,8 @@ function App() {
           hideNavbar ? '-translate-y-full' : 'translate-y-50'
         }`}
       >
-        <div className="px-4 py-1 sm:px-6 sm:py-3 bg-black/90 border-2 border-white pixel-box-hard pixel-dungeon-enter">
-          <ul className="flex gap-4 sm:gap-15">
+        <div className="px-2 py-1 sm:px-4 sm:py-2 bg-black/90 border-2 border-white pixel-box-hard pixel-dungeon-enter">
+          <ul className="flex gap-3 sm:gap-6 md:gap-8">
             {[
               { name: 'GitHub', link: 'https://github.com/JustinWangsa', img: '/github.png' },
               { name: 'LinkedIn', link: 'https://www.linkedin.com/in/justinwangsa/', img: '/linkedin.png' },
@@ -87,7 +105,7 @@ function App() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-10 h-10 sm:w-12 sm:h-12 hover:scale-110 transition-transform"
+                  className="block w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 hover:scale-110 transition-transform"
                 >
                   <img src={item.img} alt={item.name} className="w-full h-full object-contain" />
                 </a>
@@ -145,7 +163,7 @@ function App() {
 
         {/* CV BUTTON */}
         <a
-          href="/Justin_Wangsa_CV.pdf"
+          href="cv.pdf"
           target="_blank"
           className="mt-6 pixel-box-hard pixel-dungeon-enter dotgothic-font text-white text-[10px] md:text-[13px] flex items-center justify-center p-2"
         >
@@ -174,7 +192,7 @@ function App() {
             {[1, 2, 3].map((project) => (
               <div
                 key={project}
-                className={`bg-black/80 border border-white rounded-md p-3 flex flex-col items-center hover:bg-white/10 transition-colors ${showProjects ? 'pixel-pop' : ''}`}
+                className={`bg-black border border-white rounded-md p-3 flex flex-col items-center hover:bg-white/10 transition-colors ${showProjects ? 'pixel-pop' : ''}`}
                 style={{ animationDelay: `${project * 0.15}s` }}
               >
                 <a
@@ -183,6 +201,7 @@ function App() {
                       ? "https://github.com/JustinWangsa/Inventory-Management-System-Website"
                       : project === 2
                       ? "https://github.com/JustinWangsa/cashier-network-based"
+                      //last project
                       : "https://github.com/JustinWangsa/portfolio"
                   }
                   target="_blank"
@@ -195,6 +214,7 @@ function App() {
                         ? "/inventory.png"
                         : project === 2
                         ? "/pos.png"
+                        //last project
                         : "/website.png"
                     }
                     alt="Project preview"
@@ -225,11 +245,13 @@ function App() {
         {/* EXPERIENCE SECTION */}
         <div
           id="experience"
-          className="relative z-10 mt-110 mb-50 mx-auto w-full max-w-[1250px] px-4 sm:px-6"
+          className={`relative z-10 mt-110 mb-50 mx-auto w-full max-w-[1250px] px-4 sm:px-6 ${showExperience ? 'pixel-rise' : ''}`}
         >
           <div className="mb-6">
-            <h2 className="dotgothic-font text-white text-[16px] md:text-[20px] mb-3">Experience</h2>
-            <p className="dotgothic-font text-gray-300 text-[10px] md:text-[20px] text-center">
+            <h2 className={`dotgothic-font text-white text-[16px] md:text-[20px] mb-3 ${showExperience ? 'pixel-rise' : ''}`}>
+              Experience
+            </h2>
+            <p className={`dotgothic-font text-gray-300 text-[10px] md:text-[20px] text-center ${showExperience ? 'pixel-rise pixel-rise-delay' : ''}`}>
               Looking for a chance for an internship to gain hands on experience :)
             </p>
           </div>
@@ -261,8 +283,8 @@ function App() {
 
         {/* PORTFOLIO POPUP */}
         {showPortfolioPopup && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/1 backdrop-blur-sm">
-            <div className="border-2 border-white rounded-md p-6 max-w-lg w-full relative shadow-2xl">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/4 backdrop-blur-xl">
+            <div className="border-2 border-white rounded-md p-6 max-w-lg w-full relative shadow-5xl">
               <button
                 onClick={() => setShowPortfolioPopup(false)}
                 className="absolute top-3 right-3 text-white text-2xl font-bold hover:text-gray-400"

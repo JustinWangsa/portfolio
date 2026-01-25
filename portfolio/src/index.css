@@ -209,3 +209,28 @@ body {
     transform: translateY(18px);
   }
 }
+
+@keyframes pixelRise {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pixel-rise {
+  animation: pixelRise 0.8s steps(6, end) forwards;
+}
+
+.pixel-rise-delay {
+  opacity: 0;
+  animation: pixelRise 0.8s steps(6, end) forwards;
+  animation-delay: 0.25s;
+}
