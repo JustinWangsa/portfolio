@@ -252,7 +252,7 @@ function App() {
               Experience
             </h2>
             <p className={`dotgothic-font text-gray-300 text-[10px] md:text-[20px] text-center ${showExperience ? 'pixel-rise pixel-rise-delay' : ''}`}>
-              Looking for a chance for an internship to gain hands on experience :)
+              Looking for a chance for an internship to gain hands on experience 
             </p>
           </div>
         </div>
