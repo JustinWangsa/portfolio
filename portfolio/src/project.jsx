@@ -34,11 +34,11 @@ export default function Project() {
           to="/"
           className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base border border-white rounded-md text-white hover:bg-white/10 transition-colors whitespace-nowrap"
         >
-          ← Back to Home
+          ← Home
         </Link>
 
         {/* Title */}
-        <h1 className="dotgothic-font text-white text-2xl sm:text-3xl md:text-4xl text-center whitespace-nowrap flex-1">
+        <h1 className="dotgothic-font text-white text-2xl sm:text-3xl md:text-4xl text-center whitespace-nowrap flex-1 font-bold">
           Projects Archive
         </h1>
 
@@ -58,20 +58,20 @@ export default function Project() {
         <table className="min-w-full border-collapse text-left text-white">
           <thead>
             <tr className="border-b border-gray-700">
-              <th className="px-4 py-2 text-xs sm:text-sm">Year</th>
-              <th className="px-4 py-2 text-xs sm:text-sm">Project</th>
-              <th className="px-4 py-2 text-xs sm:text-sm">Built with</th>
-              <th className="px-4 py-2 text-xs sm:text-sm">Link</th>
+              <th className="px-4 py-2 text-xl sm:text-2xl">Year</th>
+              <th className="px-4 py-2 text-xl sm:text-2xl">Project</th>
+              <th className="hidden sm:table-cell px-4 py-2 text-xs sm:text-2xl"> Built with </th>
+              <th className="px-4 py-2 text-xl sm:text-2xl">Link</th>
             </tr>
           </thead>
           <tbody>
             {projects.map((proj, idx) => (
-              <tr key={idx} className="border-b border-gray-800 hover:bg-white/10 transition-colors">
-                <td className="px-4 py-2 text-[12px] sm:text-[14px] dotgothic-font">{proj.year}</td>
+              <tr key={idx} className="border-b border-gray-800 hover:bg-white/10 transition-colors px-4 py-2">
+                <td className="px-4 py-4 text-[12px] sm:text-[14px] dotgothic-font">{proj.year}</td>
                 <td className="px-4 py-2 font-semibold text-[12px] sm:text-[14px] dotgothic-font">{proj.name}</td>
-                <td className="px-4 py-2 flex flex-wrap gap-1 text-[10px] sm:text-[12px] dotgothic-font">
+                <td className="hidden sm:table-cell px-4 py-2  gap-x-4 gap-y-3 text-[10px] sm:text-[12px] dotgothic-font">
                   {proj.builtWith.map((tech, i) => (
-                    <span key={i} className="bg-teal-700 text-[10px] sm:text-[12px] px-2 py-1 rounded-full">
+                    <span key={i} className="bg-teal-700 text-[10px] sm:text-[12px] px-3 py-1 rounded-full">
                       {tech}
                     </span>
                   ))}
