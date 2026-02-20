@@ -4,7 +4,7 @@ A modern personal portfolio built with **Vite**, **Tailwind CSS**, and **React**
 
 ## 🚀 Live Demo
 
-// live demo link
+[live demo](https://justinwangsa.vercel.app/)
 
 ## 🧠 About
 
