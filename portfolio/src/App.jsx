@@ -105,7 +105,7 @@ function App() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 hover:scale-110 transition-transform"
+                  className="block w-6 sm:w-8 md:w-12 h-5 sm:h-5 md:h-12 hover:scale-100 transition-transform"
                 >
                   <img src={item.img} alt={item.name} className="w-full h-full object-contain" />
                 </a>
