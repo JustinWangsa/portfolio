@@ -32,7 +32,7 @@ export default function Project() {
         {/* Left button */}
         <Link
           to="/"
-          className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base border border-white rounded-md text-white hover:bg-white/10 transition-colors whitespace-nowrap"
+          className="hidden sm:inline-block px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base border border-white rounded-md text-white hover:bg-white/10 transition-colors whitespace-nowrap"
         >
           ← Home
         </Link>
