@@ -245,15 +245,57 @@ function App() {
         {/* EXPERIENCE SECTION */}
         <div
           id="experience"
-          className={`relative z-10 mt-110 mb-50 mx-auto w-full max-w-[1250px] px-4 sm:px-6 ${showExperience ? 'pixel-rise' : ''}`}
+          className={`relative z-10 mt-110 mb-50 mx-auto w-full max-w-[1250px] px-4 sm:px-6 ${
+            showExperience ? 'pixel-rise' : ''
+          }`}
         >
           <div className="mb-6">
-            <h2 className={`dotgothic-font text-white text-[16px] md:text-[20px] mb-3 ${showExperience ? 'pixel-rise' : ''}`}>
-              Experience
+            <h2
+              className={`dotgothic-font text-white text-[16px] md:text-[20px] mb-6 ${
+                showExperience ? 'pixel-rise' : ''
+              }`}
+            >
+              Work Experience
             </h2>
-            <p className={`dotgothic-font text-gray-300 text-[10px] md:text-[20px] text-center ${showExperience ? 'pixel-rise pixel-rise-delay' : ''}`}>
-              Looking for a chance for an internship to gain hands on experience 
-            </p>
+
+            {/* BERDIKARI JAYA */}
+            <div
+              className={`text-white ${
+                showExperience ? 'pixel-rise pixel-rise-delay' : ''
+              }`}
+            >
+              {/* Company + Date */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
+                <h3 className="dotgothic-font text-[16px] md:text-[24px] font-bold">
+                  Berdikari Jaya<span className="text-gray-400"> - Indonesia</span>
+                </h3>
+              </div>
+
+              {/* Position */}
+              <p className="dotgothic-font text-gray-300 text-[13px] md:text-[18px] mb-3">
+                intern / part-time
+              </p>
+
+              {/* Responsibilities */}
+              <ul className=" list-disc list-inside space-y-1 text-gray-300 text-[13px] md:text-[20px] leading-relaxed">
+                <li>
+                  Handled sales, purchase, and goods return notes, ensuring accurate
+                  transaction records.
+                </li>
+                <li>
+                  Loaded and organised logistics goods for efficient storage and
+                  distribution.
+                </li>
+                <li>
+                  Recorded and maintained accurate payment transactions and financial
+                  records.
+                </li>
+                <li>
+                  Managed product information, including names, prices, and other
+                  relevant product details.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
