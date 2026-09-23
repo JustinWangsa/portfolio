@@ -163,7 +163,7 @@ function App() {
 
         {/* CV BUTTON */}
         <a
-          href="cv.pdf"
+          href="CV.pdf"
           target="_blank"
           className="mt-6 pixel-box-hard pixel-dungeon-enter dotgothic-font text-white text-[10px] md:text-[13px] flex items-center justify-center p-2"
         >
