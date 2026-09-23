@@ -267,13 +267,13 @@ function App() {
               {/* Company + Date */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
                 <h3 className="dotgothic-font text-[16px] md:text-[24px] font-bold">
-                  Berdikari Jaya<span className="text-gray-400"> - Indonesia</span>
+                  CV. Berdikari Jaya<span className="text-gray-400"> - Indonesia</span>
                 </h3>
               </div>
 
               {/* Position */}
               <p className="dotgothic-font text-gray-300 text-[13px] md:text-[18px] mb-3">
-                intern / part-time
+                Internship
               </p>
 
               {/* Responsibilities */}
@@ -297,6 +297,39 @@ function App() {
               </ul>
             </div>
           </div>
+              
+            <br></br>  
+              {/* MADJU JAYA LESTARI  */}
+              <div
+                className={`text-white ${
+                  showExperience ? 'pixel-rise pixel-rise-delay' : ''
+                }`}
+              >
+                {/* Company + Date */}
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1 mt-10 ">
+                  <h3 className="dotgothic-font text-[16px] md:text-[24px] font-bold">
+                    CV. Madju Jaya Lestari<span className="text-gray-400"> - Indonesia</span>
+                  </h3>
+                </div>
+
+                {/* Position */}
+                <p className="dotgothic-font text-gray-300 text-[13px] md:text-[18px] mb-3">
+                  Internship
+                </p>
+
+                {/* Responsibilities */}
+                <ul className=" list-disc list-inside space-y-1 text-gray-300 text-[13px] md:text-[20px] leading-relaxed">
+                  <li>
+                    Coordinated the loading, organisation, and storage of logistics goods to support efficient distribution.
+                  </li>
+                  <li>
+                    Managed and updated product information, including product names, pricing, and relevant details.
+                  </li>
+                  <li>
+                    Assisted with daily administrative and operational tasks to ensure smooth business processes.
+                  </li>
+                </ul>
+              </div>
         </div>
 
         {/* FLOATING PORTFOLIO BUTTON */}
