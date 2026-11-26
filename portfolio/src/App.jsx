@@ -202,7 +202,7 @@ function App() {
                       : project === 2
                       ? "https://github.com/JustinWangsa/cashier-network-based"
                       //last project
-                      : "https://github.com/JustinWangsa/portfolio"
+                      : "https://github.com/Viriyadhi/arca-be"
                   }
                   target="_blank"
                   rel="noopener noreferrer"
@@ -215,7 +215,7 @@ function App() {
                         : project === 2
                         ? "/pos.png"
                         //last project
-                        : "/website.png"
+                        : "/nas.png"
                     }
                     alt="Project preview"
                     className="w-full h-[250px] object-cover rounded-md hover:scale-105 transition-transform"
@@ -227,7 +227,7 @@ function App() {
                     ? "INVENTORY MANAGEMENT"
                     : project === 2
                     ? "POS SYSTEM"
-                    : "WEBSITE PORTFOLIO"}
+                    : "NAS"}
                 </h3>
 
                 <p className="text-gray-400 text-[10px] md:text-[12px] text-center">
@@ -235,7 +235,7 @@ function App() {
                     ? "Inventory tracking and management system."
                     : project === 2
                     ? "Point of sale web application."
-                    : "Personal portfolio website."}
+                    : "Online storage system."}
                 </p>
               </div>
             ))}
