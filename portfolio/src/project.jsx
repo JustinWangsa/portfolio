@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import PixelSnow from './PixelSnow.jsx';
 
 const projects = [ 
+  { year: 2026, name: "Current Website Portfolio", builtWith: ["Python", "Django", "MySQL", "JavaScript", "HTML", "TailwindCSS"], link: "https://github.com/Viriyadhi/arca-be", displayText: "GitHub ↗" },
   { year: 2025, name: "Current Website Portfolio", builtWith: ["Html", "TailwindCSS", "JavaScript", "React", "Vite"], link: "https://github.com/JustinWangsa/portfolio", displayText: "GitHub ↗" },
   { year: 2025, name: "POS system", builtWith: ["Html", "TailwindCSS", "JavaScript", "Electron.js", "Node.js","MySQL"], link: "https://github.com/JustinWangsa/cashier-network-based", displayText: "GitHub ↗" },
   { year: 2025, name: "Website Based Timer", builtWith: ["Html", "CSS" ,"JavaScript", "Juris.js"], link: "https://github.com/JustinWangsa/Web-based-Timer-in-JurisJS", displayText: "GitHub ↗" },
